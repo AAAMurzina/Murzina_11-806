@@ -9,15 +9,24 @@ public class ClassTestTask01 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n * n];
+
         int[][] matrix = new int [n][n];
         for (int i = 0; i < n * n; i++) {
             arr[i] = sc.nextInt();
         }
         sortArr(arr);
+        System.out.println();
         for (int i = 0; i < n * n; i++) {
             System.out.print(arr[i] + " ");
         }
         fillSpiral(matrix,arr);
+        System.out.println();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
         System.out.println(overDiagonalSum(matrix, n));
     }
 
@@ -63,17 +72,15 @@ public class ClassTestTask01 {
         if (n % 2 == 1) {
             matrix[n / 2][n / 2] = arr[k + 1];
         }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(matrix[i][j] + "\t");
-            }
-            System.out.println();
-        }
+
     }
     static int overDiagonalSum(int[][] matrix, int n){
         int sum = 0;
-        for ( int i = 1; i < n; i++){
-            sum += matrix[i][i];
+        for ( int i = 0; i < n - 1; i++) {
+            for (int j = 1; j < n; j++) {
+
+                sum += matrix[i][j];
+            }
         }
         return sum;
     }
