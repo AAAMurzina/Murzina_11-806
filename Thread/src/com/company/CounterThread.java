@@ -10,7 +10,7 @@ public class CounterThread extends Thread {
     private int start;
     private int end;
 
-    private  static final Object MUTEX = new Object();
+    private static final Object MUTEX = new Object();
     private static Lock lock = new ReentrantLock();
 
     public CounterThread(int[] arr, int start, int end) {
@@ -22,12 +22,12 @@ public class CounterThread extends Thread {
     @Override
     public void run() {
         for (int i = start; i < end; i++) {
-//            synchronized (MUTEX){
-                lock.lock();
-                Main.mainSum += arr[i];
-                lock.unlock();
+// synchronized (MUTEX){
+            lock.lock();
+            Main.mainSum += arr[i];
+            lock.unlock();
 
-//            }
+// }
 
         }
     }

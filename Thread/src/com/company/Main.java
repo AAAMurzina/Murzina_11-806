@@ -14,7 +14,7 @@ public class Main {
             arr[i] = (r.nextInt(10));
             mainSum += arr[i];
         }
-            System.out.println(mainSum);
+        System.out.println(mainSum);
         mainSum = 0;
 
         List<Thread> threadList = new ArrayList<>();
