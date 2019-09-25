@@ -1,0 +1,13 @@
+.mainborder {
+    width: 700px;	height: 1080px;
+    outline: 2px solid #74E3FF;
+    border: 3px solid #fff;
+}
+
+.topinf {
+    width: 700px;
+    margin: 0 auto;
+
+.bold_text {
+    font-weight: bold;
+}
